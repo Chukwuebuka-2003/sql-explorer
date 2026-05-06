@@ -26,3 +26,9 @@ DATABASES = {
         "PORT": os.environ.get("POSTGRES_PORT", "5432"),
     }
 }
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://explorer.comradic.com",
+    "http://explorer.comradic.com",
+]
