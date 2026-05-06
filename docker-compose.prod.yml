@@ -31,7 +31,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_HOST: db
       ADMIN_PASSWORD: ${ADMIN_PASSWORD}
-        volumes:
+    volumes:
       - static_files:/app/staticfiles
     depends_on:
       db:
