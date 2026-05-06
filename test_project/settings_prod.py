@@ -1,13 +1,16 @@
 import os
+from pathlib import Path
 from .settings import *
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = "/static/"
+
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "change-me")
 DEBUG = False
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
-
-# Static files
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") # This is the magic line
+ALLOWED_HOSTS = ["*"] 
 
 # WhiteNoise
 MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
