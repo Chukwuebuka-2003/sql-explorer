@@ -32,6 +32,11 @@ DATABASES = {
     }
 }
 
-# Turn off Vite Dev Mode to fix the "Vite isn't running" error
+
+
+# Nuclear override for Vite
 EXPLORER_VITE_DEV_MODE = False
+DJANGO_VITE_DEV_MODE = False
 DJANGO_VITE = {"default": {"dev_mode": False}}
+VITE_DEV_MODE = False
+
