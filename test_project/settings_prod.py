@@ -1,16 +1,17 @@
 import os
-from .settings import *  # noqa: F401, F403
+from .settings import *
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "change-me")
 DEBUG = False
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 
-# Static files - THIS PART FIXES THE ERROR
+# Static files
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") 
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") # This is the magic line
 
-# WhiteNoise (for serving static files in production)
+# WhiteNoise
 MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # PostgreSQL
 DATABASES = {
