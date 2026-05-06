@@ -25,5 +25,13 @@ CSRF_TRUSTED_ORIGINS = [
     "https://explorer.comradic.com",
     "http://explorer.comradic.com",
 ]
+
 LOGIN_REDIRECT_URL = "/explorer/"
 LOGIN_URL = "/explorer/login/"
+
+
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": False,
+    }
+}
